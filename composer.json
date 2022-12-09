@@ -1,0 +1,20 @@
+{
+    "name": "grupo-cometa/request-validation",
+    "description": "",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pedro Henrique de Oliveira Souza",
+            "email": "pedro.souza@viacometa.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cometa\\Request\\":"src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
