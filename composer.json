@@ -11,11 +11,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Cometa\\Request\\":"src/"
+            "GrupoCometa\\Request\\":"src/"
         }
     },
     "require": {
-        "php": ">=8.0",
+        "php": "^8.1",
         "illuminate/http":"9.43.0",
         "illuminate/support":"9.43.0"
     }

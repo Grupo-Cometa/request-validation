@@ -1,6 +1,6 @@
 <?php
 
-namespace Cometa\Request;
+namespace GrupoCometa\Request;
 
 use Closure;
 use Illuminate\Http\Exceptions\HttpResponseException;
