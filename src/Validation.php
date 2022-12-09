@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Validator;
 
-abstract class BaseValidation
+abstract class Validation
 {
     public function handle($request, Closure $next)
     {
