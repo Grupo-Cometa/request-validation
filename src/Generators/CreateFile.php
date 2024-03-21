@@ -14,7 +14,7 @@ class CreateFile
         $template = '<?php' . PHP_EOL;
         $template .= file_get_contents(__DIR__ . '/template');
         $bindings = [
-            '{{namespace}}' => $this->namespace,
+            '{{namespace}}' => $this->snakeCaseToPascalCase($this->namespace),
             '{{className}}' => ucfirst($this->className),
             '{{validations}}' => (string) $this->validations
         ];
