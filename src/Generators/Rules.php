@@ -25,9 +25,8 @@ class Rules implements JsonSerializable
 
     public function __toString()
     {
-
         $strValidation = implode("|", $this->items);
-        return  $strValidation;
+        return $strValidation;
     }
 
     public function jsonSerialize()

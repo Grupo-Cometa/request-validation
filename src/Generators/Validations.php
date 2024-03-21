@@ -13,9 +13,14 @@ class Validations
 
     public function __toString()
     {
+        $bindsReplace = [
+            'array (' => '',
+            ')' => '',
+            "'" => '"'
+        ];
         $n = PHP_EOL;
         $strArr = var_export($this->items, true);
-        $strArr =  str_replace(['array (', ')'], ['', ''], $strArr);
+        $strArr =  str_replace(array_keys($bindsReplace), array_values($bindsReplace), $strArr);
         $strArr = preg_replace('/\n|^/', "$n\t\t\t", $strArr);
         return $strArr;
     }
