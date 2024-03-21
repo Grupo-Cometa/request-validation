@@ -1,7 +1,7 @@
 
 namespace {{namespace}};
 
-use GrupoCometa\Request\Validation;
+use GrupoCometa\Validations\Validation;
 
 class {{className}} extends Validation
 {
