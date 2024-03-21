@@ -1,6 +1,6 @@
 <?php
 
-namespace GrupoCometa\Request;
+namespace GrupoCometa\Validations;
 
 interface InterfaceAuthorization 
 {

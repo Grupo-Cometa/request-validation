@@ -1,6 +1,6 @@
 <?php
 
-namespace GrupoCometa\Request;
+namespace GrupoCometa\Validations;
 
 use Closure;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 
 abstract class Validation
 {
+    protected $request;
+    
     public function handle($request, Closure $next)
     {
         $this->request = $request;
@@ -52,16 +54,20 @@ abstract class Validation
 
     private function authorization()
     {
-        if(!($this instanceof InterfaceAuthorization)) return true;
+        if (!($this instanceof InterfaceAuthorization)) return true;
 
-        if($this->authorize()) return true;
-        
+        if ($this->authorize()) return true;
+
         throw new HttpResponseException(response()->json([
             'type'   => 'warning',
             'message'   => 'validation.autorization',
         ], 401));
     }
 
+    protected function messages(): array
+    {
+        return [];
+    }
+
     abstract protected function rules(): array;
-    abstract protected function messages(): array;
 }

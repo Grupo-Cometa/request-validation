@@ -1,0 +1,28 @@
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Illuminate\Console\Application;
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+// Crie uma instância do contêiner de serviços do Laravel
+$container = new Container();
+
+// Crie uma instância do despachante de eventos do Laravel
+$dispatcher = new Dispatcher($container);
+
+// Crie uma instância de Input e Output
+$input = new ArgvInput();
+$output = new ConsoleOutput();
+
+// Crie uma instância de Application, passando o nome e a versão da sua aplicação, o contêiner de serviços e o despachante de eventos
+$app = new Application($container, $dispatcher, 'Nome da Sua Aplicação', '1.0.0');
+
+// Adicione seu comando personalizado aqui
+$app->add(new \GrupoCometa\Validations\Commands\GeneratorValidation);
+
+// Execute o console
+$app->run($input, $output);

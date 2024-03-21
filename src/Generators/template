@@ -1,0 +1,14 @@
+
+namespace {{namespace}};
+
+use GrupoCometa\Request\Validation;
+
+class {{className}} extends Validation
+{
+    public function rules(): array
+    {
+        return [
+          {{validations}}
+        ]; 
+    }
+}
